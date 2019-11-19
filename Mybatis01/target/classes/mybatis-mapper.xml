@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jbit.entity.User">
+	<!-- 查询 -->
+	<select id="allUser" resultType="com.jbit.entity.User">
+		select * from i_user
+	</select>
+	<!-- 根据id -->
+	<select id="UserId" resultType="com.jbit.entity.User">
+		select * from i_user where userId=#{id}
+	</select>
+	<!-- 添加 -->
+	<insert id="Userinsert" parameterType="com.jbit.entity.User">
+		insert into i_user value(#{userId},#{userName},#{passWord})
+	</insert>
+	<!-- 删除 -->
+	<insert id="deleteUser" parameterType="com.jbit.entity.User">
+		delete from i_user where userId=#{id}
+	</insert>
+	<!-- 修改 -->
+	<update id="updateUser" parameterType="com.jbit.entity.User">
+		update i_user set userName=#{userName},passWord=#{passWord} where userId=#{userId}
+	</update>
+	
+</mapper>
